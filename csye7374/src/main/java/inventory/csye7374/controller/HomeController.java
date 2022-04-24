@@ -20,4 +20,12 @@ public class HomeController {
 	public ModelAndView adminLogin(HttpServletResponse response) throws IOException{
 		return new ModelAndView("home");
 	}
+	@RequestMapping(value="/customerLogin")
+	public ModelAndView customerLogin(HttpServletResponse response) throws IOException{
+		return new ModelAndView("customerLogin");
+	}
+	@RequestMapping(value="/adminLogin")
+	public ModelAndView adminLogin(HttpServletResponse response) throws IOException{
+		return new ModelAndView("adminLogin");
+	}
 }
