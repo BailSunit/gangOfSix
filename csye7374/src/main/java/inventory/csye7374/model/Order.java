@@ -3,7 +3,7 @@ package inventory.csye7374.model;
 public class Order implements State {
 
 	private String customer;
-	private Item item;
+	private String itemId;
 	private int quantity;
 	private State currentState;
 	private State orderPlaced;
@@ -57,12 +57,12 @@ public class Order implements State {
 		this.customer = customer;
 	}
 
-	public Item getItem() {
-		return item;
+	public String getItemId() {
+		return itemId;
 	}
 
-	public void setItem(Item item) {
-		this.item = item;
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
 
 	public int getQuantity() {
