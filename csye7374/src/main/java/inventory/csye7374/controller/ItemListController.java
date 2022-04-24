@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HomeController {
+public class ItemListController {
 
-	@RequestMapping(value="/")
+	@RequestMapping(value="/itemList")
 	public ModelAndView customerLogin(HttpServletResponse response) throws IOException{
 		return new ModelAndView("home");
 	}
 	
-	@RequestMapping(value="/admin")
-	public ModelAndView adminLogin(HttpServletResponse response) throws IOException{
-		return new ModelAndView("home");
-	}
 }
