@@ -1,3 +1,4 @@
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -5,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Home</title>
+        <title>Customer Login</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
@@ -20,12 +21,16 @@
             </style>
     </head>
     <body>
-        <div style="padding: 0px 200px 20px 200px ">
-            <p style="text-align: center;font-family: 'Righteous', cursive;; font-size: xxx-large;color:yellow;font-weight: 900">Welcome to Breakfast at GangOfSix!</p>
-</div>
-        <div style="text-align: center; border: 2px solid white; margin: 50px 400px; border-radius: 5%">
-            <p style="margin: 30px 10px;font-family: 'Righteous', cursive;"><a href="customerLogin" style="text-decoration: none; font-size: xx-large;color: yellow">Customer Login</a></p><br>
-            <p style="font-family: 'Righteous', cursive;"><a href="adminLogin" style="text-decoration: none; font-size: xx-large;color: yellow">Admin Login</a></p><br>
+        <div style="text-align: center; font-family: 'Righteous', cursive; align-content: flex-start; margin-top: 50px">
+        <h2>Login</h2><br>
         </div>
+        <div style="text-align: center; border: 2px solid black; margin: 10px 400px; border-radius: 5%">
+       <form:form modelAttribute="user">
+        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">User-name:<input type="text" required="true"/></p><br>
+        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">Password:<input type="password"  required="true"/></p><br>
+        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow"><input type="submit" value="Signin"></p>
+        </form:form>
+        </div>
+        
     </body>
 </html>
