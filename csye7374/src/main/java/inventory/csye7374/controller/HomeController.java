@@ -20,4 +20,9 @@ public class HomeController {
 	public ModelAndView adminLogin(HttpServletResponse response) throws IOException{
 		return new ModelAndView("home");
 	}
+	
+	@RequestMapping(value="/adminHomePage")
+	public ModelAndView adminHomePage(HttpServletResponse response) throws IOException{
+		return new ModelAndView("adminHomePage");
+	}
 }
