@@ -8,9 +8,11 @@
         <title>Home</title>
     </head>
     <body>
-        <a href="">Order List</a>
-        <a href="">Update Order</a>
-        <a href="">Check Inventory</a>
+    <p>
+        <a href="orderList">Order List</a>
+        <a href="updateOrder">Update Order</a>
+        <a href="checkInventory">Check Inventory</a>
         <button type="button">Logout</button>
+    </p>
     </body>
 </html>
