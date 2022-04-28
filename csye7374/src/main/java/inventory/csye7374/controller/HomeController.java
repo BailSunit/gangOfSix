@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	@RequestMapping(value="/")
-	public ModelAndView customerLogin(HttpServletResponse response) throws IOException{
+	public ModelAndView homeLogin(HttpServletResponse response) throws IOException{
 		return new ModelAndView("home");
 	}
 	
@@ -28,5 +28,10 @@ public class HomeController {
 	@RequestMapping(value="/adminHomePage")
 	public ModelAndView adminHomePage(HttpServletResponse response) throws IOException{
 		return new ModelAndView("adminHomePage");
+	}
+	
+	@RequestMapping(value="/logout")
+	public ModelAndView logout(HttpServletResponse response) throws IOException{
+		return new ModelAndView("home");
 	}
 }

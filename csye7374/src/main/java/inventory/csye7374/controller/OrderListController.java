@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class OrderListController {
-	
+	/*
 	@Autowired
 	private OrderServiceFacade orderServiceFacade;
 	
@@ -21,8 +21,9 @@ public class OrderListController {
 		//Sribalaji 
 		/*
 		 * list = orderServiceFacade.getOrderList("customer");
-		 */
+		 *//*
 		return new ModelAndView("orderList",list);
 	}
+*/
 
 }
