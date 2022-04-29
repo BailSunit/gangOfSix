@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class FileReaderService {
 
-	private String filePath = "/Users/sunitbail/Documents/GitHub/CSYE6220/";
+	private String filePath = "/Users/surbhiparihar/";
 
 	public String getFilePath() {
 		return filePath;
