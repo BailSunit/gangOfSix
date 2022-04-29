@@ -40,7 +40,6 @@ public class ItemListController {
 		List<Order> orders = new ArrayList<>();
 		for (Item item : itemList) {
 			itemMap.put(item.getSlNo(), item);
-			System.out.println(item.getSlNo() + " " + item.getItemName());
 		}
 
 		for (String orderId : orderList) {

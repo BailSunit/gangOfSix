@@ -24,5 +24,10 @@ public class OrderPlaced implements State {
 	public void orderComplete() {
 		System.out.println("Can't go from Order Placed to Order Complete");
 	}
+	
+	@Override
+	public String toString() {
+		return "OrderPlaced";
+	}
 
 }

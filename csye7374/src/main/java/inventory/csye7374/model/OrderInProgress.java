@@ -24,5 +24,10 @@ public class OrderInProgress implements State {
 		//write to orderList and say order complete
 
 	}
+	
+	@Override
+	public String toString() {
+		return "OrderInProgress";
+	}
 
 }
