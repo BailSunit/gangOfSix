@@ -40,11 +40,11 @@ public class EmployeeServiceAdapter {
 			e.setEmail(employee.get(2));
 			e.setPhone(employee.get(3));
 			e.setPosition(employee.get(4));
-			if(employee.get(5).equals("RecentlyHired"))
+			if (employee.get(5).equals("RecentlyHired"))
 				e.setCurrentState(new RecentlyHired(e));
-			if(employee.get(5).equals("PendingReview"))
+			if (employee.get(5).equals("PendingReview"))
 				e.setCurrentState(new PendingReview(e));
-			if(employee.get(5).equals("ReviewComplete"))
+			if (employee.get(5).equals("ReviewComplete"))
 				e.setCurrentState(new ReviewComplete(e));
 
 			employeeList.add(e);
@@ -54,7 +54,7 @@ public class EmployeeServiceAdapter {
 
 	public void updateEmployeeDirectory(List<Employee> employeeList) throws IOException {
 		List<String> data = new ArrayList<>();
-		for(Employee employee : employeeList) {
+		for (Employee employee : employeeList) {
 			data.add(employee.toString());
 		}
 		employeeService.writeFile(data);

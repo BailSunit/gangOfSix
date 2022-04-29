@@ -25,16 +25,16 @@ public class EmployeeService extends FileReaderService {
 	@Override
 	public List<List<String>> readFile() throws NumberFormatException, IOException {
 		
-		List<List<String>> itemList = new ArrayList<List<String>>();
+		List<List<String>> employeeList = new ArrayList<List<String>>();
 		BufferedReader csvReader = new BufferedReader(new FileReader(getFileName()));
 		String row;
 		while ((row = csvReader.readLine()) != null) {
 			String[] data = row.split(",");
-			itemList.add(Arrays.asList(data));
+			employeeList.add(Arrays.asList(data));
 			
 		}
 		csvReader.close();
-		return itemList;		
+		return employeeList;		
 	}
 	
 	@Override

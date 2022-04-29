@@ -12,7 +12,9 @@ public class Employee {
 	private ReviewState reviewComplete;
 
 	public Employee() {
-		
+		recentlyHired = new RecentlyHired(this);
+		reviewPending = new PendingReview(this);
+		reviewComplete = new ReviewComplete(this);
 	}
 
 	public String getEid() {
@@ -87,4 +89,8 @@ public class Employee {
 		this.reviewComplete = reviewComplete;
 	}
 
+	@Override
+	public String toString() {
+		return eid + "," + name + "," + email + "," + phone + "," + position + "," + currentState;
+	}
 }
