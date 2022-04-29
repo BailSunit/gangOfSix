@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import inventory.csye7374.config.service.facade.ItemServiceFacade;
@@ -25,7 +26,7 @@ public class ItemListController {
 	@Autowired
 	private ItemServiceFacade itemServiceFacade;
 
-	@RequestMapping(value = "/itemList")
+	@RequestMapping(value = "/itemList", method=RequestMethod.GET)
 	public ModelAndView customerLogin(HttpServletResponse response) throws IOException {
 		List<Item> itemList = itemServiceFacade.returnItemList();
 		return new ModelAndView("itemList", "itemList", itemList);

@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer Login</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
         <style>
             
@@ -25,9 +25,9 @@
         <h2>Login</h2><br>
         </div>
         <div style="text-align: center; border: 2px solid black; margin: 10px 400px; border-radius: 5%">
-       <form:form modelAttribute="user">
-        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">User-name:<input type="text" required="true"/></p><br>
-        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">Password:<input type="password"  required="true"/></p><br>
+       <form:form modelAttribute="customer" method="POST">
+        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">User-name:<form:input type="text" path="username" required="true"/></p><br>
+        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">Password:<form:input type="password" path="password" required="true"/></p><br>
         <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow"><input type="submit" value="Signin"></p>
         </form:form>
         </div>
