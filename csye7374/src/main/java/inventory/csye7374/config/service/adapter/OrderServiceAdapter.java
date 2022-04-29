@@ -11,10 +11,6 @@ import org.springframework.stereotype.Component;
 import inventory.csye7374.config.legacy.OrderService;
 import inventory.csye7374.model.Item;
 import inventory.csye7374.model.Order;
-import inventory.csye7374.model.OrderComplete;
-import inventory.csye7374.model.OrderInProgress;
-import inventory.csye7374.model.OrderPlaced;
-import inventory.csye7374.model.State;
 
 @Component
 public class OrderServiceAdapter {
@@ -39,18 +35,8 @@ public class OrderServiceAdapter {
 		data.add(order.getItem().getItemName());
 		data.add(String.valueOf(order.getItem().getItemCost()));
 		data.add(String.valueOf(order.getQuantity()));
-		data.add(getStateString(order.getCurrentState()));
+		data.add(order.getCurrentStateName());
 		orderService.writeFile(data);
-	}
-
-	private String getStateString(State currentState) {
-		if(currentState instanceof OrderPlaced) {
-			return "OrderPlaced";
-		} else if (currentState instanceof OrderInProgress) {
-			return "OrderInProgress";
-		} else {
-			return "OrderComplete";
-		}
 	}
 
 	public List<Order> getOrdersByCustomerName(String customerName) throws IOException {
@@ -66,20 +52,10 @@ public class OrderServiceAdapter {
 				item.setItemCost(Double.valueOf(rowList.get(3)));
 				order.setItem(item);
 				order.setQuantity(Integer.valueOf(rowList.get(4)));
-				order.setCurrentState(getStateFromStateString(rowList.get(5), order));
+				order.setCurrentState(order.getCurrentStateFromName(rowList.get(5)));
 				orderList.add(order);
 			}
 		}
 		return orderList;
-	}
-
-	private State getStateFromStateString(String currentStateString, Order order) {
-		if(currentStateString.equals("OrderPlaced")) {
-			return new OrderPlaced(order);
-		} else if (currentStateString.equals("OrderInProgress")) {
-			return new OrderInProgress(order);
-		} else {
-			return new OrderComplete(order);
-		}
 	}
 }

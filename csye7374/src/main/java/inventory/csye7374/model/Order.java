@@ -87,5 +87,25 @@ public class Order implements State {
 	public void orderComplete() {
 		this.currentState.orderComplete();
 	}
+	
+	public String getCurrentStateName() {
+		if(currentState instanceof OrderPlaced) {
+			return "OrderPlaced";
+		} else if (currentState instanceof OrderInProgress) {
+			return "OrderInProgress";
+		} else {
+			return "OrderComplete";
+		}
+	}
+	
+	public State getCurrentStateFromName(String stateName) {
+		if(stateName.equals("OrderPlaced")) {
+			return new OrderPlaced(this);
+		} else if (stateName.equals("OrderInProgress")) {
+			return new OrderInProgress(this);
+		} else {
+			return new OrderComplete(this);
+		}
+	}
 
 }

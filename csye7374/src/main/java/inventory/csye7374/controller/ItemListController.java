@@ -31,6 +31,11 @@ public class ItemListController {
 	
 	@Autowired
 	private OrderServiceFacade orderServiceFacade;
+	
+	@RequestMapping(value = "/itemList", method = RequestMethod.POST) 
+	public ModelAndView backAction(HttpServletResponse response) {
+		return new ModelAndView("redirect:itemList");
+	}
 
 	@RequestMapping(value = "/itemList", method=RequestMethod.GET)
 	public ModelAndView customerLogin(HttpServletResponse response) throws IOException {
@@ -56,6 +61,7 @@ public class ItemListController {
 				order.setCurrentState(new OrderPlaced(order));
 				order.setItem(item);
 				order.setCustomerName(user.getUsername());
+				order.setQuantity(1);
 				orders.add(order);
 				item.setAvailable(item.getAvailable() - 1);
 				itemMap.replace(orderId, item);

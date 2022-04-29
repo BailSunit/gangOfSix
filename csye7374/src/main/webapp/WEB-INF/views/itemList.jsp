@@ -10,14 +10,16 @@
 </head>
 <body>
 	<center>
-		<form action="pastOrder" method="get">
-			<input type="button" value="Past Orders">
+		<form action="pastOrder" method="post">
+				<input type="submit" value="Past Orders">
 		</form>
 	</center>
 	<center>
 		<form action="placeOrder" method="post">
 			<br /> <br />
 			<p style="font-family: verdana; font-size: 40px">Inventory List</p>
+			<br/>
+			<br/>
 			<table border="1">
 				<tr>
 					<th>Select</th>
