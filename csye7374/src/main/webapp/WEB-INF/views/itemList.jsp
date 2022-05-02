@@ -7,20 +7,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Order Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+            
+            body{
+                min-height: 100vh;
+                background-image: linear-gradient(transparent,black 99%), url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-size: cover;
+            }
+          
+</style>
 </head>
 <body>
+<div style="padding: 0px 200px 20px 200px ">
+            <p style="text-align: center;font-family: 'Righteous', cursive;; font-size: xxx-large;color:yellow;font-weight: 900">Place your order!</p>
+	</div>
 	<center>
 		<form action="pastOrder" method="post">
-				<input type="submit" value="Past Orders">
+				<input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Past Orders">
 		</form>
 	</center>
 	<center>
 		<form action="placeOrder" method="post">
 			<br /> <br />
-			<p style="font-family: verdana; font-size: 40px">Inventory List</p>
-			<br/>
-			<br/>
-			<table border="1">
+			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">Inventory List</p>
+			
+			<table style="text-align: center;font-family: 'Righteous', cursive; font-size: medium;color:white;font-weight: 400" border="1">
 				<tr>
 					<th>Select</th>
 					<th>Item Name</th>
@@ -45,7 +59,7 @@
 				</c:forEach>
 			</table>
 			<br /> <br /> <input type="hidden" name="source" value="firstForm" />
-			<input type="submit" value="Place my Order!" />
+			<input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Place my Order!" />
 		</form>
 	</center>
 </body>

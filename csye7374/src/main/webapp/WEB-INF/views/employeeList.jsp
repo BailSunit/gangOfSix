@@ -7,15 +7,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Employee Registry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+            
+            body{
+                min-height: 100vh;
+                background-image: linear-gradient(transparent,black 99%), url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-size: cover;
+            }
+          
+</style>
 </head>
 <body>
+<div style="padding: 0px 200px 20px 200px ">
+         <p style="text-align: center;font-family: 'Righteous', cursive;; font-size: xxx-large;color:yellow;font-weight: 700">Employee List</p>
+	     <p style="text-align: center;font-family: 'Righteous', cursive;; font-size: x-large;color:yellow;font-weight: 400">To update your Employee's Review State, select your employee
+				and click Update Review Status</p>
+	</div>
 	<center>
 		<form action="employeeList" method="post">
-			<br /> <br />
-			<p style="font-family: verdana; font-size: 40px">Employee List</p>
-			<h3>To update your Employee's Review State, select your employee
-				and click Update Review Status</h3>
-			<table border="1">
+			<table style="text-align: center;font-family: 'Righteous', cursive;; font-size: medium;color:white;font-weight: 100" border="1">
 				<tr>
 					<th>Select</th>
 					<th>Employee ID</th>
@@ -38,7 +51,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<br /> <br /> <input type="submit" value="Update Review Status" />
+			<br /> <br /> <input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Update Review Status" />
 		</form>
 	</center>
 </body>

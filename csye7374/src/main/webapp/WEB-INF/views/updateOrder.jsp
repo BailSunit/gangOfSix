@@ -13,9 +13,9 @@
 	<center>
 		<form action="updateOrder" method="post">
 			<br /> <br />
-			<p style="font-family: verdana; font-size: 40px">Fulfill Orders</p>
-			<br /> <br />
-			<table border="1">
+			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">Fulfill Orders</p>
+			
+			<table style="text-align: center;font-family: 'Righteous', cursive; font-size: medium;color:white;font-weight: 400" border="1">
 				<tr>
 					<th>Select</th>
 					<th>Customer Name</th>
@@ -36,7 +36,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<br /> <br /> <input type="submit" value="Update These Orders" />
+			<br /> <br /> <input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Update These Orders" />
 		</form>
 	</center>
 </body>

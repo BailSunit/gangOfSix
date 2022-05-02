@@ -7,16 +7,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>orderList</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+            
+            body{
+                min-height: 100vh;
+                background-image: linear-gradient(transparent,black 99%), url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-size: cover;
+            }
+          
+</style>
     </head>
     <body>
 	    <center>
 			<form action="itemList" method="get">
-				<input type="submit" value="Back to Items List"/>
+				<input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Back to Items List"/>
 			</form>
 		</center>
 		<center>
-			<p style="font-family: verdana; font-size: 40px">Order History</p>
-			<table border="1">
+			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">Order History</p>
+			<table style="text-align: center;font-family: 'Righteous', cursive; font-size: medium;color:white;font-weight: 400" border="1">
 				<tr>
 					<th>Item Name</th>
 					<th>Item Cost</th>

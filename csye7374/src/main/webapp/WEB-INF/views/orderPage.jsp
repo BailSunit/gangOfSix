@@ -8,17 +8,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>My Orders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+            
+            body{
+                min-height: 100vh;
+                background-image: linear-gradient(transparent,black 99%), url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+                background-size: cover;
+            }
+          
+</style>
 </head>
 <body>
 	<center>
 		<form action="pastOrder" method="post">
-			<input type="submit" value="Past Orders">
+			<input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Past Orders">
 		</form>
 		<form action="logout" method="post">
 			<br /> <br />
 			<c:set var="totalCost" value="${0}"></c:set>
-			<p style="font-family: verdana; font-size: 40px">My Orders</p>
-			<table border="1">
+			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">My Orders</p>
+			<table style="text-align: center;font-family: 'Righteous', cursive; font-size: medium;color:white;font-weight: 400" border="1">
 				<tr>
 					<th>Item Name</th>
 					<th>Item Cost</th>
@@ -32,11 +44,11 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<h1>
-				Your Order total is
-				<fmt:formatNumber value="${totalCost}" type="currency" />
-			</h1>
-			<br /> <br /> <input type="submit" value="Logout" />
+			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">
+			Your Order total is
+			
+			<fmt:formatNumber value="${totalCost}" type="currency" /></p>
+			<br /> <br /> <input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Logout" />
 		</form>
 	</center>
 </body>

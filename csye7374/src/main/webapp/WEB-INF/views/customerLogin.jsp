@@ -21,9 +21,9 @@
             </style>
     </head>
     <body>
-        <div style="text-align: center; font-family: 'Righteous', cursive; align-content: flex-start; margin-top: 50px">
-        <h2>Login</h2><br>
-        </div>
+        <div style="padding: 0px 200px 20px 200px ">
+            <p style="text-align: center;font-family: 'Righteous', cursive;; font-size: xxx-large;color:yellow;font-weight: 900">Customer Login</p>
+</div>
         <div style="text-align: center; border: 2px solid black; margin: 10px 400px; border-radius: 5%">
        <form:form modelAttribute="customer" method="POST">
         <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">User-name:<form:input type="text" path="username" required="true"/></p><br>
