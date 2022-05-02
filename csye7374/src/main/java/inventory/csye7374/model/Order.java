@@ -54,10 +54,10 @@ public class Order implements State {
 	}
 
 	public Order() {
-		this.currentState = new OrderPlaced(this);
-		orderPlaced = new OrderPlaced(this);
-		orderInProgress = new OrderInProgress(this);
-		orderComplete = new OrderComplete(this);
+		this.currentState = OrderPlacedFactory.getInstance(this);
+		orderPlaced = OrderPlacedFactory.getInstance(this);
+		orderInProgress = OrderInProgressFactory.getInstance(this);
+		orderComplete = OrderCompleteFactory.getInstance(this);
 	}
 
 	public String getCustomerName() {

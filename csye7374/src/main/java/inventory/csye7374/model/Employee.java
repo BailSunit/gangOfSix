@@ -12,9 +12,9 @@ public class Employee {
 	private ReviewState reviewComplete;
 
 	public Employee() {
-		recentlyHired = new RecentlyHired(this);
-		reviewPending = new PendingReview(this);
-		reviewComplete = new ReviewComplete(this);
+		recentlyHired = RecentlyHiredFactory.getInstance(this);
+		reviewPending = ReviewPendingFactory.getInstance(this);
+		reviewComplete = ReviewCompleteFactory.getInstance(this);
 	}
 
 	public String getEid() {
