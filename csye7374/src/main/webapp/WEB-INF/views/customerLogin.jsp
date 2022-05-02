@@ -28,7 +28,7 @@
        <form:form modelAttribute="customer" method="POST">
         <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">User-name:<form:input type="text" path="username" required="true"/></p><br>
         <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow">Password:<form:input type="password" path="password" required="true"/></p><br>
-        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow"><input type="submit" value="Signin"></p>
+        <p style="margin: 20px 10px; font-family: 'Righteous', cursive;color:yellow"><input type="submit" value="Sign In"></p>
         </form:form>
         </div>
         

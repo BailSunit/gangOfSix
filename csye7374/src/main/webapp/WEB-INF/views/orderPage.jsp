@@ -10,45 +10,58 @@
 <title>My Orders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap"
+	rel="stylesheet">
 <style>
-            
-            body{
-                min-height: 100vh;
-                background-image: linear-gradient(transparent,black 99%), url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-                background-size: cover;
-            }
-          
+body {
+	min-height: 100vh;
+	background-image: linear-gradient(transparent, black 99%),
+		url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+	background-size: cover;
+}
 </style>
 </head>
 <body>
 	<center>
 		<form action="pastOrder" method="post">
-			<input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Past Orders">
+			<input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Past Orders">
 		</form>
 		<form action="logout" method="post">
 			<br /> <br />
 			<c:set var="totalCost" value="${0}"></c:set>
-			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">My Orders</p>
-			<table style="text-align: center;font-family: 'Righteous', cursive; font-size: medium;color:white;font-weight: 400" border="1">
+			<p
+				style="text-align: center; font-family: 'Righteous', cursive; font-size: x-large; color: yellow; font-weight: 400">My
+				Orders</p>
+			<table
+				style="text-align: center; font-family: 'Righteous', cursive; font-size: medium; color: white; font-weight: 400"
+				border="1">
 				<tr>
 					<th>Item Name</th>
 					<th>Item Cost</th>
+					<th>Quantity</th>
 				</tr>
 				<c:forEach items="${orders}" var="order">
 					<tr>
 						<td>${order.item.itemName}</td>
 						<td>${order.item.itemCost}</td>
+						<td>${order.quantity}</td>
 						<c:set var="totalCost" scope="page"
-							value="${totalCost + order.item.itemCost}"></c:set>
+							value="${totalCost + order.item.itemCost*order.quantity}"></c:set>
 					</tr>
 				</c:forEach>
 			</table>
-			<p style="text-align: center;font-family: 'Righteous', cursive; font-size: x-large;color:yellow;font-weight: 400">
-			Your Order total is
-			
-			<fmt:formatNumber value="${totalCost}" type="currency" /></p>
-			<br /> <br /> <input type="submit" style="margin: 30px 10px;font-family: 'Righteous', cursive;" value="Logout" />
+			<p
+				style="text-align: center; font-family: 'Righteous', cursive; font-size: x-large; color: yellow; font-weight: 400">
+				Your Order total is
+
+				<fmt:formatNumber value="${totalCost}" type="currency" />
+			</p>
+			<br /> <br /> <input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Logout" />
 		</form>
 	</center>
 </body>
