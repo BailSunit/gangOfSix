@@ -22,6 +22,11 @@ body {
 </style>
 </head>
 <body>
+	<center>
+		<form action="adminHomePage" method="get">
+			<input type="submit" value="Back To Dashboard">
+		</form>
+	</center>
 	<div style="padding: 0px 200px 20px 200px">
 		<p
 			style="text-align: center; font-family: 'Righteous', cursive;; font-size: xxx-large; color: yellow; font-weight: 700">Employee
@@ -31,11 +36,6 @@ body {
 			update your Employee's Review State, select your employee and click
 			Update Review Status</p>
 	</div>
-	<center>
-		<form action="adminHomePage" method="post">
-			<input type="submit" value="Back To Dashboard">
-		</form>
-	</center>
 	<center>
 		<form action="employeeList" method="post">
 			<table

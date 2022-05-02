@@ -23,7 +23,7 @@ body {
 </head>
 <body>
 	<center>
-		<form action="adminHomePage" method="post">
+		<form action="adminHomePage" method="get">
 			<input type="submit" value="Back To Dashboard">
 		</form>
 	</center>
