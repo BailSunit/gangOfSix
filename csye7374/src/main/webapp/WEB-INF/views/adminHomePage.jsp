@@ -54,9 +54,11 @@ body {
 		</p>
 		<br>
 
-		<button type="button"
-			style="margin: 30px 10px; font-family: 'Righteous', cursive;">Logout</button>
-		<br>
+		<form action="adminLogin" method="get">
+			<input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Logout" />
+		</form>
 
 	</div>
 	</p>

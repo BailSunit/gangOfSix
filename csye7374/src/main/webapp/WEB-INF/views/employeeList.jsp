@@ -24,7 +24,9 @@ body {
 <body>
 	<center>
 		<form action="adminHomePage" method="get">
-			<input type="submit" value="Back To Dashboard">
+			<input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Back To Dashboard">
 		</form>
 	</center>
 	<div style="padding: 0px 200px 20px 200px">

@@ -11,7 +11,9 @@
 <body>
 	<center>
 		<form action="adminHomePage" method="get">
-			<input type="submit" value="Back To Dashboard">
+			<input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Back To Dashboard">
 		</form>
 	</center>
 	<center>
@@ -34,8 +36,8 @@
 						<td>${item.itemName}</td>
 						<td>${item.itemCost}</td>
 						<td>${item.available}</td>
-						<td><INPUT TYPE="NUMBER" ID="${item.slNo}_value" NAME="${item.slNo}_value" MIN="1"
-							MAX="100"/></td>
+						<td><INPUT TYPE="NUMBER" ID="${item.slNo}_value"
+							NAME="${item.slNo}_value" MIN="1" MAX="100" /></td>
 					</tr>
 				</c:forEach>
 			</table>

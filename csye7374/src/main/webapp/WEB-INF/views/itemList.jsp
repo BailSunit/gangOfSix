@@ -74,6 +74,11 @@ body {
 				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
 				value="Place my Order!" />
 		</form>
+		<form action="customerLogin" method="get">
+			<input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Logout" />
+		</form>
 	</center>
 </body>
 </html>

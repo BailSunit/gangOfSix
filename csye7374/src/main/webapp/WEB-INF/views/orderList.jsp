@@ -61,6 +61,11 @@ body {
 
 			<fmt:formatNumber value="${totalCost}" type="currency" />
 		</p>
+		<form action="customerLogin" method="get">
+			<input type="submit"
+				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
+				value="Logout" />
+		</form>
 	</center>
 </body>
 </html>
