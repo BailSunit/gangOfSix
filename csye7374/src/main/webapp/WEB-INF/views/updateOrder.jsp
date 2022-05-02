@@ -7,6 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Order Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Righteous&family=Satisfy&display=swap"
+	rel="stylesheet">
+<style>
+body {
+	min-height: 100vh;
+	background-image: linear-gradient(transparent, black 99%),
+		url(https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+	background-size: cover;
+}
+</style>
 </head>
 <body>
 	<center>
