@@ -1,9 +1,9 @@
 package inventory.csye7374.model;
 
 public class OrderComplete implements State {
-	
+
 	public Order order;
-	
+
 	public OrderComplete(Order order) {
 		this.order = order;
 	}
@@ -20,11 +20,9 @@ public class OrderComplete implements State {
 
 	@Override
 	public void orderComplete() {
-		//Order COmplete Start point
-		//write to orderList and say order complete
-
+		System.out.println("Can't go from Order Complete to Order Complete");
 	}
-	
+
 	@Override
 	public String toString() {
 		return "OrderComplete";

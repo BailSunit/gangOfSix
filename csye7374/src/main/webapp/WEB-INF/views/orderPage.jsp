@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -11,6 +11,9 @@
 </head>
 <body>
 	<center>
+		<form action="pastOrder" method="post">
+			<input type="submit" value="Past Orders">
+		</form>
 		<form action="logout" method="post">
 			<br /> <br />
 			<c:set var="totalCost" value="${0}"></c:set>
@@ -29,8 +32,10 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<h1>Your Order total is
-			<fmt:formatNumber value="${totalCost}" type="currency" /></h1>
+			<h1>
+				Your Order total is
+				<fmt:formatNumber value="${totalCost}" type="currency" />
+			</h1>
 			<br /> <br /> <input type="submit" value="Logout" />
 		</form>
 	</center>

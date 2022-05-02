@@ -20,9 +20,7 @@ public class OrderInProgress implements State {
 
 	@Override
 	public void orderComplete() {
-		//Order COmplete Start point
-		//write to orderList and say order complete
-
+		order.setCurrentState(order.getOrderComplete());
 	}
 	
 	@Override

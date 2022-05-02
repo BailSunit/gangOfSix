@@ -9,9 +9,10 @@
     </head>
     <body>
     <p>
-        <a href="orderList">Order List</a>
+        <a href="completeOrderList">Order List</a>
         <a href="updateOrder">Update Order</a>
         <a href="checkInventory">Check Inventory</a>
+        <a href="employeeList">Employee Registry</a>
         <button type="button">Logout</button>
     </p>
     </body>

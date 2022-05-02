@@ -10,7 +10,7 @@
     </head>
     <body>
 	    <center>
-			<form action="itemList" method="post">
+			<form action="itemList" method="get">
 				<input type="submit" value="Back to Items List"/>
 			</form>
 		</center>

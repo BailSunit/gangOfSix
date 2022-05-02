@@ -1,7 +1,10 @@
 package inventory.csye7374.model;
 
+import java.util.UUID;
+
 public class Order implements State {
 
+	private UUID orderId;
 	private String customerName;
 	private Item item;
 	private int quantity;
@@ -9,6 +12,14 @@ public class Order implements State {
 	private State orderPlaced;
 	private State orderInProgress;
 	private State orderComplete;
+
+	public UUID getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(UUID orderId) {
+		this.orderId = orderId;
+	}
 
 	public State getOrderPlaced() {
 		return orderPlaced;
@@ -87,9 +98,9 @@ public class Order implements State {
 	public void orderComplete() {
 		this.currentState.orderComplete();
 	}
-	
+
 	public String getCurrentStateName() {
-		if(currentState instanceof OrderPlaced) {
+		if (currentState instanceof OrderPlaced) {
 			return "OrderPlaced";
 		} else if (currentState instanceof OrderInProgress) {
 			return "OrderInProgress";
@@ -97,9 +108,9 @@ public class Order implements State {
 			return "OrderComplete";
 		}
 	}
-	
+
 	public State getCurrentStateFromName(String stateName) {
-		if(stateName.equals("OrderPlaced")) {
+		if (stateName.equals("OrderPlaced")) {
 			return new OrderPlaced(this);
 		} else if (stateName.equals("OrderInProgress")) {
 			return new OrderInProgress(this);
@@ -108,4 +119,9 @@ public class Order implements State {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return orderId + "," + customerName + "," + item.getSlNo() + "," + item.getItemName() + "," + item.getItemCost()
+				+ "," + quantity + "," + currentState;
+	}
 }

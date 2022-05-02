@@ -2,6 +2,7 @@ package inventory.csye7374.controller;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -23,19 +24,24 @@ public class HomeController {
 	UserService userService;
 
 	@RequestMapping(value="/")
-	public ModelAndView homeLogin(HttpServletResponse response) throws IOException{
+	public ModelAndView homeLogin(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		HttpSession session = request.getSession();
+		session.invalidate();
 		return new ModelAndView("home");
 	}
 	
 	@RequestMapping(value="/customerLogin", method = RequestMethod.GET)
-	public ModelAndView customerLogin(Model model, HttpServletResponse response) throws IOException{
+	public ModelAndView customerLogin(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException{
+		HttpSession session = request.getSession();
+		session.invalidate();
 		model.addAttribute("customer", new User());
 		return new ModelAndView("customerLogin");
 	}
 	
 	@RequestMapping(value="/customerLogin", method = RequestMethod.POST)
-	public ModelAndView customerLoginSubmit(@ModelAttribute("customer") User user, HttpServletResponse response, HttpSession session) throws IOException{
+	public ModelAndView customerLoginSubmit(@ModelAttribute("customer") User user, HttpServletResponse response, HttpServletRequest request) throws IOException{
 		if(userService.validateUser(user)) {
+			HttpSession session = request.getSession();
 			session.setAttribute("customer", user);
 			return new ModelAndView("redirect:itemList");
 		}
