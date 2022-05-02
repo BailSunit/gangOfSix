@@ -58,11 +58,8 @@ public class MessagingDetails {
 		mimeMessage.setContent(multiPart);
 
 		Transport transport = newSession.getTransport("smtp");
-		System.out.println("Got Transport");
 		transport.connect(from, password);
-		System.out.println("Connected");
 		transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
-		System.out.println("Sent email");
 		transport.close();
 		System.out.println("Email successfully sent!!!");
 	}

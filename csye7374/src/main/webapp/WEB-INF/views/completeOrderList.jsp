@@ -24,7 +24,7 @@ body {
 </head>
 <body>
 	<center>
-		<form action="itemList" method="get">
+		<form action="adminHomePage" method="get">
 			<input type="submit"
 				style="margin: 30px 10px; font-family: 'Righteous', cursive;"
 				value="Back" />
@@ -33,8 +33,8 @@ body {
 	<center>
 		<c:set var="totalCost" value="${0}"></c:set>
 		<p
-			style="text-align: center; font-family: 'Righteous', cursive; font-size: x-large; color: yellow; font-weight: 400">Order
-			History</p>
+			style="text-align: center; font-family: 'Righteous', cursive; font-size: x-large; color: yellow; font-weight: 400">Complete
+			Order List</p>
 		<table
 			style="text-align: center; font-family: 'Righteous', cursive; font-size: medium; color: white; font-weight: 400"
 			border="1">
@@ -57,7 +57,7 @@ body {
 		</table>
 		<p
 			style="text-align: center; font-family: 'Righteous', cursive; font-size: x-large; color: yellow; font-weight: 400">
-			You have spent a total of
+			Total Purchases
 
 			<fmt:formatNumber value="${totalCost}" type="currency" />
 		</p>

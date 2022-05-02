@@ -40,12 +40,12 @@ public class OrderListController {
 	public String completeOrderList(HttpServletResponse response, HttpSession session, Model model) throws IOException {
 		// Get User ID
 		User user = (User) session.getAttribute("admin");
-		// if(user == null)
-		// return "redirect:adminLogin";
+		if (user == null)
+			return "redirect:adminLogin";
 		List<Order> orders = orderServiceFacade.getAllOrder();
 		orderServiceFacade.setInProgress(orders);
 		model.addAttribute("orders", orders);
-		return "orderList";
+		return "completeOrderList";
 	}
 
 	@RequestMapping(value = "/updateOrder", method = RequestMethod.GET)
