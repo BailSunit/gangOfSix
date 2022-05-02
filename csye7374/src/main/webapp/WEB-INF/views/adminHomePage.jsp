@@ -28,7 +28,7 @@
         <div style="text-align: center; border: 2px solid white; margin: 50px 400px; border-radius: 5%">
             <p style="margin: 30px 10px;font-family: 'Righteous', cursive;"><a href="completeOrderList" style="text-decoration: none; font-size: xx-large;color: yellow">Order List</a></p><br>
             <p style="margin: 30px 10px;font-family: 'Righteous', cursive;"><a href="updateOrder" style="text-decoration: none; font-size: xx-large;color: yellow">Update Order</a></p><br>
-            <p style="margin: 30px 10px;font-family: 'Righteous', cursive;"><a href="checkInventory" style="text-decoration: none; font-size: xx-large;color: yellow">Check Inventory</a></p><br>
+            <p style="margin: 30px 10px;font-family: 'Righteous', cursive;"><a href="inventory" style="text-decoration: none; font-size: xx-large;color: yellow">Check Inventory</a></p><br>
 			<p style="margin: 30px 10px;font-family: 'Righteous', cursive;"><a href="employeeList" style="text-decoration: none; font-size: xx-large;color: yellow">Employee Registry</a></p><br>
 			
 			<button type="button" style="margin: 30px 10px;font-family: 'Righteous', cursive;">Logout</button><br>

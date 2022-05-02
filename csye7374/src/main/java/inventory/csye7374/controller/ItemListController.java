@@ -3,7 +3,10 @@ package inventory.csye7374.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.UUID;
 
@@ -47,7 +50,11 @@ public class ItemListController {
 		if (session.getAttribute("customer") == null)
 			return new ModelAndView("redirect:customerLogin");
 		List<Item> itemList = itemServiceFacade.returnItemList();
-		return new ModelAndView("itemList", "itemList", itemList);
+		List<Item> returnedList = new ArrayList<>();
+		for(Item i : itemList)
+			if(i.getAvailable()>0) 
+				returnedList.add(i);
+		return new ModelAndView("itemList", "itemList", returnedList);
 	}
 
 	@RequestMapping(value = "/placeOrder")
@@ -84,6 +91,47 @@ public class ItemListController {
 		itemServiceFacade.changeInventoryCount(new ArrayList<Item>(itemMap.values()));
 		orderServiceFacade.addOrders(orders);
 		return new ModelAndView("orderPage", "orders", orders);
+	}
+
+	@RequestMapping(value = "/inventory", method = RequestMethod.GET)
+	public ModelAndView updateInventoryGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
+		// HttpSession session = request.getSession(false);
+		// if (session.getAttribute("customer") == null)
+		// return new ModelAndView("redirect:adminLogin");
+		List<Item> itemList = itemServiceFacade.returnItemList();
+		return new ModelAndView("inventoryList", "itemList", itemList);
+	}
+
+	@RequestMapping(value = "/inventory", method = RequestMethod.POST)
+	public ModelAndView updateInventory(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession(false);
+
+		List<Item> itemList = itemServiceFacade.returnItemList();
+		HashMap<String, Item> itemMap = new HashMap<>();
+		Map<String, String[]> requestMap = request.getParameterMap();
+		Set<String> itemUpdateList = requestMap.keySet();
+		for (Item item : itemList) {
+			itemMap.put(item.getSlNo(), item);
+		}
+
+		// User user = (User) session.getAttribute("customer");
+		// if (user == null)
+		// return new ModelAndView("redirect:customerLogin");
+		for (String itemId : itemUpdateList) {
+			if (itemMap.containsKey(itemId)) {
+				String[] a = requestMap.get(itemId + "_value");
+				Item item = itemMap.get(itemId);
+				if(a[0]=="")
+				item.setAvailable(item.getAvailable() + 20);
+				else
+					item.setAvailable(item.getAvailable() + Integer.parseInt(a[0]));
+				itemMap.replace(itemId, item);
+			}
+		}
+		List<Item> updatedList = new ArrayList<Item>(itemMap.values());
+		itemServiceFacade.changeInventoryCount(updatedList);
+		return new ModelAndView("inventoryList", "itemList", updatedList);
 	}
 
 }

@@ -36,8 +36,7 @@ public class ItemServiceAdapter {
 			i.setItemName(item.get(1));
 			i.setItemCost(Double.parseDouble(item.get(2)));
 			i.setAvailable(Integer.parseInt(item.get(3)));
-			if (i.getAvailable() > 0)
-				itemList.add(i);
+			itemList.add(i);
 		}
 		return itemList;
 	}
